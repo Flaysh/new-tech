@@ -1,7 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-// eslint-disable-next-line import/prefer-default-export
-export function useMediaQuery(query: string): boolean {
+const useMediaQuery = (query: string): boolean => {
 	const [matches, setMatches] = useState(() => matchMedia(query).matches)
 
 	useLayoutEffect(() => {
@@ -20,3 +19,5 @@ export function useMediaQuery(query: string): boolean {
 
 	return matches
 }
+
+export default useMediaQuery
